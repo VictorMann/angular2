@@ -4,5 +4,9 @@ import { Injectable } from '@angular/core';
 export class PessoaServiceService {
 
   constructor() { }
-
+  
+  getPessoas(): string [] 
+  {
+    return ['João', 'Thiago', 'Angular 2', 'Thamires'];
+  }
 }
