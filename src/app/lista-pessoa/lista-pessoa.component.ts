@@ -19,6 +19,12 @@ export class ListaPessoaComponent implements OnInit {
   ngOnInit() {
   }
 
+  enviarPessoa()
+  {
+    this.nome.trim() && this.service.setPessoa(this.nome);
+    this.nome = '';
+  }
+
   listar() {
     
   }
