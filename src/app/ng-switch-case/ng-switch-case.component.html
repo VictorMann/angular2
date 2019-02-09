@@ -1,0 +1,17 @@
+<h2>ngSwitch</h2>
+<div [ngSwitch]="numero">
+  <p *ngSwitchCase="1">Valor <code>numero = {{ numero }}</code> um</p>
+  <p *ngSwitchCase="2">Valor <code>numero = {{ numero }}</code> dois</p>
+  <p *ngSwitchCase="3">Valor <code>numero = {{ numero }}</code> três</p>
+  <p *ngSwitchDefault>Valor <code>numero = {{ numero }}</code> (default)</p>
+</div>
+
+<h4>com uso de *ngIf</h4>
+<div>
+  <p *ngIf="numero == 1">Valor <code>numero = {{ numero }}</code> um</p>
+  <p *ngIf="numero == 2">Valor <code>numero = {{ numero }}</code> dois</p>
+  <p *ngIf="numero == 3">Valor <code>numero = {{ numero }}</code> três</p>
+  <p *ngIf="!(numero >= 1 && numero <= 3)">Valor <code>numero = {{ numero }}</code> (default)</p>
+</div>
+
+<button (click)="incrementarNumero()">Incrementar numero</button>
