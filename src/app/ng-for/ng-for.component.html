@@ -1,0 +1,9 @@
+<h2>*ngFor</h2>
+
+<button (click)="ordenar()">Ordenar</button>
+
+<ul>
+    <li *ngFor="let nome of nomes, let i = index">
+        {{ i + 1 }} - {{ nome }}
+    </li>
+</ul>
