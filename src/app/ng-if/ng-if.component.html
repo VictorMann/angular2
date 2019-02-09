@@ -1,0 +1,22 @@
+<h2>*ngIf</h2>
+
+<div *ngIf="true">*ngIf verdadeiro</div>
+<div *ngIf="false">*ngIf falso</div>
+
+<button (click)="mostar()">Exibir nome da escola de treinamentos</button>
+<br>
+<p *ngIf="getValor()">Treinamentos com a condicional *ngIf</p> <!-- remove a tag -->
+<p [hidden]="!getValor()">Treinamentos com a condicional [hidden]</p> <!-- apenas esconde "display:none" -->
+
+<h3>Cursos</h3>
+
+<button (click)="addCurso()">Cadastrar curso</button>
+
+<p *ngIf="cursos.length <= 0">Não temos curosos cadastrados</p>
+<p *ngIf="cursos.length > 0">Temos cursos cadastrados</p>
+
+<ul *ngIf="cursos.length > 0">
+  <li *ngFor="let curso of cursos">
+    {{ curso }}
+  </li>
+</ul>
