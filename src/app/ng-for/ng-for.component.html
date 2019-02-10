@@ -1,9 +1,11 @@
 <h2>*ngFor</h2>
 
 <button (click)="ordenar()">Ordenar</button>
+<button (click)="atualizar()">Atualizar</button>
 
 <ul>
-    <li *ngFor="let nome of nomes, let i = index">
-        {{ i + 1 }} - {{ nome }}
+    <!-- trackBy renderiza apenas os novos elemetos da lista -->
+    <li *ngFor="let nome of nomes, let i = index; trackBy:meuSave">
+        Nome da pessoa é: {{nome.nome}} com id {{nome.id}}, está na posição {{i +1}}
     </li>
 </ul>

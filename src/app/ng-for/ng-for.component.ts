@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgForComponent implements OnInit {
 
-  nomes: Array<string> = ['Leticia', 'Melissa', 'Pamela', 'Andreia'];
+  nomes: Array<any> = [
+    {id: 1, nome: 'Naomi'},
+    {id: 2, nome: 'Carolina'},
+    {id: 3, nome: 'Elisa'},
+    {id: 4, nome: 'Manuela'},
+  ];
   inverterNomes: boolean = false;
 
   constructor() { }
@@ -17,8 +22,8 @@ export class NgForComponent implements OnInit {
   sort()
   {
     this.nomes.sort((a, b): number => {
-      let x: string = a.toLowerCase();
-      let y: string = b.toLowerCase();
+      let x: string = a.nome.toLowerCase();
+      let y: string = b.nome.toLowerCase();
       if (x == y) return 0;
       return (x > y) ? 1 : -1;
     });
@@ -31,4 +36,19 @@ export class NgForComponent implements OnInit {
     this.inverterNomes = !this.inverterNomes;
   }
 
+  meuSave(index: number, nomes: any)
+  {
+    return nomes.id;
+  }
+
+  atualizar(): void
+  {
+    this.nomes = [
+      {id: 1, nome: 'Naomi'},
+      {id: 2, nome: 'Carolina'},
+      {id: 3, nome: 'Elisa'},
+      {id: 4, nome: 'Manuela'},
+      {id: 5, nome: 'Maju'},
+    ];
+  }
 }
