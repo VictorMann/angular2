@@ -10,10 +10,17 @@ export class AppComponent {
 
   title = 'Livro Angular 2';
   foto  = 'favicon.ico';
+  desenvolvimento: Array<string> = ['Angular 2', 'JavaScript', 'TypeScript', 'HTML', 'CSS'];
+  valor: string;
 
   constructor(private service: AlertaService) {}
 
   enviarMsg(): void {
     this.service.msgAlerta();
+  }
+
+  valorPassado(valorPassado: string)
+  {
+    this.valor = valorPassado;
   }
 }

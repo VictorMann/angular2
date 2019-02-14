@@ -39,3 +39,6 @@
 </app-ng-content>
 <hr>
 <app-event-binding></app-event-binding>
+<hr>
+<app-input-output [menu]="desenvolvimento" (nomeClicado)="valorPassado($event)"></app-input-output>
+<p [hidden]="!valor">valor passado @output "{{ valor }}"</p>
