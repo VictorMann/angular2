@@ -1,0 +1,23 @@
+<h2>event binding</h2>
+<button #x id="id-botao" data-dados="{'x':1}" (click)="meuClick(x.id, x.dataset.dados)">Clique aqui</button>
+<input (keyup)="digitou($event)"> <i>{{ valorDigitado }}</i>
+<input #valorInput (keyup)="digitouValorTemplate(valorInput.value)"> <i>{{ valorTemplate }}</i>
+
+<div [style.margin-top]="20 + 'px'">
+  <label>Senah min 5 carc</label>
+  <input #valorSenha type="password" (keyup)="pegaSenha(valorSenha.value)">
+  <button type="button" [disabled]="!habilitarBotao" (click)="gravarSenha()">Gravar senha</button>
+</div>
+
+<div [ngStyle]="{'margin-top': '20px'}">
+  <ul>
+    <li *ngFor="let c of conteudo">
+      {{ c }}
+    </li>
+  </ul>
+  <input #content (keyup.enter)="adicionarConteudo(content.value); content.value =''" placeholder="adicionar conteudo...">
+</div>
+
+<h3>blur</h3>
+<input #data (blur)="verIdade(data.value)" placeholder="Nascido em exp.: 1990">
+<p [hidden]="!idade">Você tem: {{ idade }} anos de idade</p>
