@@ -1,13 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 import { MeuLogService } from './meu-log.service';
 
 @Injectable()
 export class NomeTecService {
 
-  constructor(private meuLog: MeuLogService) {}
+  constructor(@Optional() private meuLog: MeuLogService) {}
 
   getNomesTec(): Array<string>
   {
+    this.meuLog && 
     this.meuLog.setLog('consultou o array de tecnologias');
 
     return [

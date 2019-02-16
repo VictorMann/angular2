@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MeuLogService } from './meu-log.service';
 import { NomeTecService } from './nome-tec.service';
+import { AlertaService } from '../alerta.service';
+import { MeuLogService } from './meu-log.service';
 
 @Component({
   selector: 'app-di',
@@ -12,9 +13,10 @@ export class DiComponent implements OnInit {
 
   tecnologias: Array<string>;
 
-  constructor(private nomeTec: NomeTecService)
+  constructor(private nomeTec: NomeTecService, private meuAlerta: AlertaService)
   {
     this.tecnologias = this.nomeTec.getNomesTec();
+    this.meuAlerta.msgAlerta();
   }
 
   ngOnInit() {}
